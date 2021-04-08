@@ -1,0 +1,84 @@
+@import url("../scss/default_styles.scss");
+
+// body{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+// }
+
+.contain{
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 200px;
+    gap: 1rem;
+    
+    // left: -50%;
+    top: -25%;
+    transform: translateY(25%);
+    .tests123{
+        position: relative;
+        min-height: 200px;
+       
+        transition: all 0.5s ;
+        transform-style: preserve-3d;
+      
+        .box{
+            $width_height:100%;
+            position: absolute;
+            height: $width_height;
+            width: $width_height;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid black;
+              border-bottom-right-radius: 17px;
+        overflow: hidden;
+            &.before{
+                // background-color: rgb(226, 226, 226);
+                backface-visibility: hidden;
+            }
+            &.after{
+                // background-color: black;
+                backface-visibility: hidden;
+                transform: rotateY(180deg) rotateX(90deg);
+               color: white;
+            }
+            .content_box{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    $width_height:100px;
+                    width: $width_height;
+                    height: $width_height;
+                    }
+                .childs{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: rgb(62, 84, 126);
+                    padding: 5px 10px;
+                    border-bottom-right-radius: 7px;
+                    color: white;
+                    
+
+                }
+            }
+        }
+        // &:active{
+        //     filter: drop-shadow(0px 0px 5px rgb(84, 112, 165));
+        // }
+        &:active{
+            transform: rotateY(180deg) rotateX(90deg);
+            transform: translate();
+        }
+    }
+
+}
+
+  
